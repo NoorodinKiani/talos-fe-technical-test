@@ -1,0 +1,77 @@
+<section class="new-post-container">
+  <form [formGroup]="form" (ngSubmit)="submit(newPostForm)">
+    <div class="left-side">
+      <div>
+        <span>Title:</span>
+        <input formControlName="title" type="text" id="title" required />
+      </div>
+      <div>
+        <span>Description:</span>
+        <textarea
+          formControlName="description"
+          type="text"
+          id="description"
+          required
+        ></textarea>
+      </div>
+      <div>
+        <span>Tags:</span>
+        <div class="tags-container">
+          <input
+            autocomplete="off"
+            formControlName="tag"
+            type="text"
+            id="tag"
+            name="tag"
+            (keyup.enter)="addTag(form.get('tag').value)"
+          />
+          <button
+            (click)="addTag(form.get('tag').value)"
+            type="button"
+            mat-raised-button
+            color="accent"
+          >
+            Add Tag
+          </button>
+        </div>
+        <div class="tags-added-wrapper">
+          <span *ngFor="let tag of form.get('tags').value">
+            <div>{{ tag }}</div>
+
+            <button (click)="removeTag(tag)" type="button" mat-button>X</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div>
+        <span>Image:</span>
+        <input
+          class="hide"
+          formControlName="image"
+          id="input-file-id"
+          type="file"
+          (change)="handleFileInput($event.target.files)"
+        />
+        <button type="button" mat-raised-button color="accent">
+          <label for="input-file-id" class="upload-btn"> Select Image </label>
+        </button>
+      </div>
+      <section class="upload-image-wrapper">
+        <img *ngIf="imgURL" src="{{ imgURL }}" />
+        <span *ngIf="!imgURL">{{ message }}</span>
+      </section>
+    </div>
+
+    <button
+      class="send-btn"
+      mat-raised-button
+      color="primary"
+      [disabled]="!form.valid"
+    >
+      <span *ngIf="!loading">Send</span>
+      <mat-spinner *ngIf="loading" diameter="20" color="accent"></mat-spinner>
+    </button>
+  </form>
+</section>

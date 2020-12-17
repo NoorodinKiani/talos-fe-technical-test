@@ -4,12 +4,16 @@ import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule } from "@angular/material/button";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { PostsComponent } from "./pages/posts/posts.component";
 import { PostComponent } from "./components/post/post.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { NewPostComponent } from "./pages/new-post/new-post.component";
 
 @NgModule({
   declarations: [
@@ -18,17 +22,23 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
     PostComponent,
     HeaderComponent,
     NotFoundComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: "", component: PostsComponent },
       { path: "posts", component: PostsComponent },
+      { path: "new-post", component: NewPostComponent },
       { path: "**", component: NotFoundComponent },
     ]),
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

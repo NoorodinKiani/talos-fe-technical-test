@@ -7,7 +7,7 @@
   </div>
   <div class="right-side">
     <a
-      *ngIf="route !== '/posts' && route !== '/'"
+      *ngIf="route !== '/posts' && route !== '/' && route !== undefined"
       class="posts-link"
       (click)="onChangeRoute('posts')"
     >

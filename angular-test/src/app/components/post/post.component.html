@@ -1,6 +1,16 @@
 <article class="post-container" *ngIf="post">
   <div class="top-content">
-    <img src="{{ config.baseUrl }}{{ post.photoUrl }}" alt="{{ post.title }}" />
+    <img
+      *ngIf="post.photoUrl"
+      src="{{ config.baseUrl }}{{ post.photoUrl }}"
+      alt="{{ post.title }}"
+    />
+    <img
+      class="no-image"
+      *ngIf="!post.photoUrl"
+      src="../../../assets/img/logo.svg"
+      alt="logo"
+    />
     <p>{{ post.description }}</p>
   </div>
   <div class="bottom-content">

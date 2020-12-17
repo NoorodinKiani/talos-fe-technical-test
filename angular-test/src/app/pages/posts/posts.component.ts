@@ -17,8 +17,10 @@ export class PostsComponent implements OnInit {
   }
 
   getPosts() {
-    return this.http.get(`${config.baseUrl}posts`).subscribe((response) => {
-      this.posts = response;
-    });
+    return this.http
+      .get(`${config.baseUrl}posts`)
+      .subscribe((response: any) => {
+        this.posts = response.reverse();
+      });
   }
 }

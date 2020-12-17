@@ -13,11 +13,18 @@
 .top-content {
   img {
     width: 100%;
-    max-height: 175px;
+    height: 175px;
     object-fit: cover;
+
+    &.no-image {
+      object-fit: none;
+      background-color: antiquewhite;
+    }
   }
   p {
     margin: 16px;
+    height: 120px;
+    overflow: auto;
 
     &::first-letter {
       text-transform: capitalize;
