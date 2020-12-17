@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Location } from "@angular/common";
 
 import { config as configData } from "../../config";
 
@@ -11,7 +12,11 @@ export class PostComponent implements OnInit {
   @Input() post: string;
   config = configData;
 
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit() {}
+
+  onChangeRoute(path) {
+    this.location.replaceState(`/${path}`);
+  }
 }

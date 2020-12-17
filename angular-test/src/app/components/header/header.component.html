@@ -1,0 +1,21 @@
+<header>
+  <div class="left-side">
+    <a (click)="onChangeRoute('')">
+      <img src="../../../assets/img/logo.svg" />
+    </a>
+    <span>Talos technical test</span>
+  </div>
+  <div class="right-side">
+    <a class="posts-link" (click)="onChangeRoute('posts')"> {{ pathname }} </a>
+    <a
+      class="new-post-link"
+      mat-stroked-button
+      color="accent"
+      (click)="onChangeRoute('new-post')"
+      (mouseenter)="onMouseOver('Add new post')"
+      (mouseleave)="onMouseOver('+')"
+    >
+      {{ newPostText }}
+    </a>
+  </div>
+</header>
