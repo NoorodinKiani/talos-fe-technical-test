@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Location } from "@angular/common";
+import { Router } from "@angular/router";
 
+import { AppService } from "../../app.service";
 import { config as configData } from "../../config";
 
 @Component({
@@ -10,13 +11,15 @@ import { config as configData } from "../../config";
 })
 export class PostComponent implements OnInit {
   @Input() post: string;
-  config = configData;
+  route: string = "";
+  config: any = configData;
 
-  constructor(private location: Location) {}
+  constructor(private appService: AppService, private router: Router) {}
 
   ngOnInit() {}
 
   onChangeRoute(path) {
-    this.location.replaceState(`/${path}`);
+    this.appService.changeCurrentRoute(`/${path}`);
+    this.router.navigate([`/${path}`]);
   }
 }

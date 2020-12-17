@@ -6,8 +6,15 @@
     <span>Talos technical test</span>
   </div>
   <div class="right-side">
-    <a class="posts-link" (click)="onChangeRoute('posts')"> {{ pathname }} </a>
     <a
+      *ngIf="route !== '/posts' && route !== '/'"
+      class="posts-link"
+      (click)="onChangeRoute('posts')"
+    >
+      Posts
+    </a>
+    <a
+      *ngIf="route !== '/new-post'"
       class="new-post-link"
       mat-stroked-button
       color="accent"

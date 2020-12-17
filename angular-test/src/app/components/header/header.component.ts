@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { Location } from "@angular/common";
+import {
+  Router,
+} from "@angular/router";
+
+import { AppService } from "../../app.service";
 
 @Component({
   selector: "app-header",
@@ -7,17 +11,21 @@ import { Location } from "@angular/common";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  pathname = "";
-  newPostText = "+";
+  route: string = "";
+  newPostText: string = "+";
 
-  constructor(private location: Location) {}
+  constructor(
+    private appService: AppService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.pathname = location.pathname;
+    this.appService.currentRoute.subscribe((route) => (this.route = route));
   }
 
   onChangeRoute(path: string) {
-    this.location.replaceState(`/${path}`);
+    this.appService.changeCurrentRoute(`/${path}`);
+    this.router.navigate([`/${path}`]);
   }
 
   onMouseOver(text: string) {
