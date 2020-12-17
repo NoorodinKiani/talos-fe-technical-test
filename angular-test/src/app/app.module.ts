@@ -2,6 +2,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
+import { MatButtonModule } from "@angular/material/button";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from "./app.component";
 import { PostsComponent } from "./pages/posts/posts.component";
@@ -11,11 +13,13 @@ import { PostComponent } from "./components/post/post.component";
   declarations: [AppComponent, PostsComponent, PostComponent],
   imports: [
     BrowserModule,
+    MatButtonModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: "posts", component: PostsComponent },
       { path: "**", component: PostsComponent },
     ]),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
