@@ -8,6 +8,13 @@
   border: 1px solid antiquewhite;
   border-radius: 8px;
   overflow: hidden;
+
+  &:hover {
+    img {
+      transition: all 0.35s;
+      transform: scale(1.1);
+    }
+  }
 }
 
 .top-content {
@@ -15,6 +22,8 @@
     width: 100%;
     height: 175px;
     object-fit: cover;
+    transition: all 0.25s;
+    transform: scale(1);
 
     &.no-image {
       object-fit: none;

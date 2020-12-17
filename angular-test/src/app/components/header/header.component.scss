@@ -40,6 +40,22 @@ header {
 .new-post-link {
   border-radius: 8px;
   min-width: unset;
+  transition: all 0.25s;
+  width: 40px;
+  overflow: hidden;
+
+  &:before {
+    content: "+";
+  }
+
+  &:hover {
+    transition: all 0.5s;
+    width: 140px;
+
+    &:before {
+      content: "Add new post";
+    }
+  }
 }
 
 .posts-link {
