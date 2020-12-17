@@ -1,5 +1,17 @@
-<p *ngIf="post">
-  {{ post.title }}
-</p>
-
-<button mat-raised-button color="primary">Primary</button>
+<article class="post-container" *ngIf="post">
+  <div class="top-content">
+    <img src="{{ config.baseUrl }}{{ post.photoUrl }}" alt="{{ post.title }}" />
+    <p>{{ post.description }}</p>
+  </div>
+  <div class="bottom-content">
+    <div class="tags-container">
+      <span class="tag" *ngFor="let tag of post.tags">
+        <span>{{ tag }}</span>
+        <span class="comma">,</span>
+      </span>
+    </div>
+    <a class="view-link" mat-stroked-button color="primary" href="/post"
+      >View</a
+    >
+  </div>
+</article>

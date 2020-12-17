@@ -2,8 +2,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
-import { MatButtonModule } from "@angular/material/button";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule } from "@angular/material/button";
 
 import { AppComponent } from "./app.component";
 import { PostsComponent } from "./pages/posts/posts.component";

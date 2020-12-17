@@ -1,0 +1,21 @@
+.posts-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 48px;
+  padding: 48px 24px;
+  max-width: 1000px;
+  margin: 0px auto;
+
+  @media only screen and (min-width: 1200px) {
+    gap: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+  }
+
+  @media only screen and (min-width: 1400px) {
+    max-width: 1200px;
+    grid-template-columns: repeat(4, 300px);
+    grid-gap: 48px;
+  }
+}
