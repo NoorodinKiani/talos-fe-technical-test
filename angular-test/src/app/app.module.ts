@@ -12,10 +12,10 @@ import { AppComponent } from "./app.component";
 import { PostsComponent } from "./pages/posts/posts.component";
 import { PostComponent } from "./components/post/post.component";
 import { HeaderComponent } from "./components/header/header.component";
-import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { NewPostComponent } from "./pages/new-post/new-post.component";
 import { ViewPostComponent } from "./pages/view-post/view-post.component";
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from "./components/footer/footer.component";
 
 @NgModule({
   declarations: [
