@@ -19,6 +19,11 @@ footer {
 
 ul {
   list-style: none;
+  padding-left: 16px;
+
+  @media only screen and (min-width: 1200px) {
+    padding-left: 24px;
+  }
 
   &:last-child {
     list-style: disc;
