@@ -1,0 +1,30 @@
+footer {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+  padding: 24px 16px;
+  line-height: 26px;
+
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-width: 1200px) {
+    padding: 24px 48px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+ul {
+  list-style: none;
+
+  &:last-child {
+    list-style: disc;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+}

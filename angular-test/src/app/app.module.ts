@@ -15,6 +15,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { NewPostComponent } from "./pages/new-post/new-post.component";
 import { ViewPostComponent } from "./pages/view-post/view-post.component";
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ViewPostComponent } from "./pages/view-post/view-post.component";
     NotFoundComponent,
     NewPostComponent,
     ViewPostComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
