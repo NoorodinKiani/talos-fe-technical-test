@@ -18,8 +18,8 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {}
 
-  onChangeRoute(path) {
+  onChangeRoute(path, id) {
     this.appService.changeCurrentRoute(`/${path}`);
-    this.router.navigate([`/${path}`]);
+    this.router.navigate([`/${path}/${id}`]);
   }
 }

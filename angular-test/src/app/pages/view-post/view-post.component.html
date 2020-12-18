@@ -1,0 +1,29 @@
+<div *ngIf="post" class="view-post-container">
+  <div class="image-wrapper">
+    <img
+      *ngIf="post.photoUrl"
+      src="{{ config.baseUrl }}{{ post.photoUrl }}"
+      alt="{{ post.title }}"
+    />
+    <img
+      class="no-image"
+      *ngIf="!post.photoUrl"
+      src="../../../assets/img/logo.svg"
+      alt="logo"
+    />
+  </div>
+  <div class="content-wrapper">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.description }}</p>
+    <div class="tags-container">
+      <a
+        class="tag"
+        *ngFor="let tag of post.tags"
+        mat-stroked-button
+        color="accent"
+      >
+        {{ tag }}
+      </a>
+    </div>
+  </div>
+</div>

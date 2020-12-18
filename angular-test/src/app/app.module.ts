@@ -14,6 +14,7 @@ import { PostComponent } from "./components/post/post.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { NewPostComponent } from "./pages/new-post/new-post.component";
+import { ViewPostComponent } from "./pages/view-post/view-post.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NewPostComponent } from "./pages/new-post/new-post.component";
     HeaderComponent,
     NotFoundComponent,
     NewPostComponent,
+    ViewPostComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { NewPostComponent } from "./pages/new-post/new-post.component";
     RouterModule.forRoot([
       { path: "", component: PostsComponent },
       { path: "posts", component: PostsComponent },
+      { path: "posts/:id", component: ViewPostComponent },
       { path: "new-post", component: NewPostComponent },
       { path: "**", component: NotFoundComponent },
     ]),
