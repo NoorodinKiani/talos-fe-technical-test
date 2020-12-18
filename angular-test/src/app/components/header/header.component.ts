@@ -20,11 +20,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.appService.currentRoute.subscribe((route) => (this.route = route));
-    this.appService.changeCurrentRoute(this.location.path());
   }
 
   onChangeRoute(path: string) {
-    this.appService.changeCurrentRoute(`/${path}`);
     this.router.navigate([`/${path}`]);
   }
 }

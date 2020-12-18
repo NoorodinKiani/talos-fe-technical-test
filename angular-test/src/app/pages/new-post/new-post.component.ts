@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
+import { Location } from "@angular/common";
 
 import { config } from "../../config";
 import { AppService } from "../../app.service";
@@ -31,10 +32,13 @@ export class NewPostComponent implements OnInit {
     private http: HttpClient,
     private snackBar: MatSnackBar,
     private zone: NgZone,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.appService.changeCurrentRoute(this.location.path());
+  }
 
   handleFileInput(files: FileList) {
     this.fileData = files.item(0);

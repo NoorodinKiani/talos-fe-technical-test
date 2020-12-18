@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
 
+import { AppService } from "../../app.service";
 import { config as configData } from "../../config";
 
 @Component({
@@ -14,9 +16,15 @@ export class ViewPostComponent implements OnInit {
   post: any;
   config: any = configData;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private appService: AppService,
+    private location: Location
+  ) {}
 
   ngOnInit() {
+    this.appService.changeCurrentRoute(this.location.path());
     this.postId = this.route.snapshot.paramMap.get("id");
     this.getPosts(this.postId);
   }
